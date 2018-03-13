@@ -27,7 +27,7 @@ public class Dentist {
 				choice = D.next().toUpperCase();
 
 				switch (choice) {
-					case "1" : {
+					case "1" : {   
 						Admin();
 						break;
 					}
