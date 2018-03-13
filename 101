@@ -1,0 +1,146 @@
+import java.util.Scanner;
+
+import seatReservationSystem.Seat;
+
+public class Dentist {
+	
+	 static final String INFORMATION = "M://metadata//dentist.txt";
+	 static final Scanner D = new Scanner(System.in);	
+	
+		public static void main(String[] args) throws Exception {
+			//loadData();
+
+			String choice = "";
+
+			System.out.println("-- Welcome to the Dentists --");
+
+
+			System.out.println();
+
+			do {
+				System.out.println("1 - Admin");
+				System.out.println("2 - Dentist");
+				System.out.println("3 - Patient");
+				System.out.println("Q - Quit");
+				System.out.print("Pick : ");
+
+				choice = D.next().toUpperCase();
+
+				switch (choice) {
+					case "1" : {
+						Admin();
+						break;
+					}
+					case "2" : {
+						Dentist();
+						break;
+					}
+					case "3" : {
+						Patients();
+						break;
+					}
+					case "4" : {
+
+						break;
+					}
+				}
+			} while (!choice.equals("Q"));
+
+	}
+
+		private static void loadData() {
+			
+			while (INFORMATION.hasNext()) {
+				String dentistFirstName = INFORMATION.next();
+				String dentistLastName = INFORMATION.next();
+				String dentistPasscode = INFORMATION.next();
+				
+				
+				
+				
+				//seats[index] = new Seat(seatName, seatClass, isWindow, isAisle, isTable, seatPrice, eMail);
+				//index++;
+			}
+			
+		}
+
+		private static void Patients() {
+			Scanner patients = new Scanner(System.in);
+			
+			for(int i=0; i<3; i++) {
+			
+				System.out.println("Please input username");
+				String usernameP = patients.next();
+				System.out.println("Please input password");
+				String passwordP = patients.next();
+				
+				if (usernameP.equals("Patient")&&passwordP.equals("password")) {
+					patientsMenu();
+					
+				}
+				else { System.out.println("Your username or password is incorrect, please try again");
+				
+				}
+				System.out.println("Tries exceeded, Returning to menu.");
+			
+		}}
+
+	
+		
+
+		private static void Dentist() {
+			Scanner dentist = new Scanner(System.in);
+			
+			for(int i=0; i<3; i++) {
+			
+				System.out.println("Please input Name");
+				String usernameD = dentist.next();
+				System.out.println("Please input password");
+				String passwordD = dentist.next();
+				
+				if (usernameD.equals("Dentist")&&passwordD.equals("password")) {
+					dentistMenu();
+					
+				}
+				else { System.out.println("Your username or password is incorrect, please try again");
+				
+				}
+				System.out.println("Tries exceeded, Returning to menu.");
+			
+		}}
+		
+		private static void Admin() {
+			Scanner admin = new Scanner(System.in);
+			
+			for(int i=0; i<3; i++) {
+			
+				System.out.println("Please input username");
+				String usernameA = admin.next();
+				System.out.println("Please input password");
+				String passwordA = admin.next();
+				
+				if (usernameA.equals("Admin")&&passwordA.equals("password")) {
+					adminMenu();
+					break;
+					
+				}
+				else { System.out.println("Your username or password is incorrect, please try again");
+				
+				}
+			}
+				System.out.println("Tries exceeded, Returning to menu.");
+				
+			
+		}
+		
+		private static void adminMenu() {
+			System.out.println("worked");
+			
+		}
+		private static void patientsMenu() {
+		
+			
+		}
+		private static void dentistMenu() {
+}
+}
